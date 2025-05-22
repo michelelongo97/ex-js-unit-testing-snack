@@ -9,14 +9,16 @@ test("La funzione getInitials restituisce le iniziali di un nome completo", () =
 
 //2
 test("La funzione createSlug restituisce una stringa in lowercase", () => {
-  expect(createSlug("CIAO")).toBe("ciao");
+  expect(createSlug("MICHELE LONGO")).toBe("michele-longo");
 });
 //3
 test("La funzione average calcola la media aritmetica di un array di numeri", () => {
   expect(average([3, 3, 3])).toBe(3);
 });
 //4
-//  test('La funzione createSlug sostituisce gli spazi con -.')
+test("La funzione createSlug sostituisce gli spazi con -.", () => {
+  expect(createSlug("Michele Longo")).toBe("michele-longo");
+});
 ///////////La funzione createSlug sostituisce gli spazi con -.
 //5
 //  test('La funzione isPalindrome verifica se una stringa è un palindromo.')
