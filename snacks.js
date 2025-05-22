@@ -1,4 +1,4 @@
-module.exports = { getInitials, createSlug, average };
+module.exports = { getInitials, createSlug, average, isPalindrome };
 
 function getInitials(nomecognome) {
   const [nome, cognome] = nomecognome.split(" ").filter((str) => str !== "");
@@ -15,4 +15,10 @@ function average(numbers) {
     sum += number;
   });
   return sum / numbers.length;
+}
+
+function isPalindrome(str) {
+  const string = str.trim().split("").reverse().join("");
+
+  return str.trim() === string;
 }
