@@ -1,4 +1,4 @@
-module.exports = { getInitials, createSlug };
+module.exports = { getInitials, createSlug, average };
 
 function getInitials(nomecognome) {
   const [nome, cognome] = nomecognome.split(" ").filter((str) => str !== "");
@@ -7,4 +7,12 @@ function getInitials(nomecognome) {
 
 function createSlug(str) {
   return str.toLowerCase();
+}
+
+function average(numbers) {
+  let sum = 0;
+  const total = numbers.forEach((number) => {
+    sum += number;
+  });
+  return sum / numbers.length;
 }
