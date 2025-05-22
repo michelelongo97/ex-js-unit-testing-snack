@@ -1,4 +1,10 @@
-module.exports = { getInitials, createSlug, average, isPalindrome };
+module.exports = {
+  getInitials,
+  createSlug,
+  average,
+  isPalindrome,
+  findPostById,
+};
 
 function getInitials(nomecognome) {
   const [nome, cognome] = nomecognome.split(" ").filter((str) => str !== "");
@@ -24,4 +30,20 @@ function isPalindrome(str) {
   const string = str.trim().split("").reverse().join("");
 
   return str.trim() === string;
+}
+
+function findPostById(posts, id) {
+  if (isNaN(id)) {
+    throw new Error("Id deve essere un numero");
+  }
+  posts.forEach((post) => {
+    if (
+      post.id === undefined ||
+      post.title === undefined ||
+      post.slug === undefined
+    ) {
+      throw new Error("Array è sbagliato");
+    }
+  });
+  return posts.find((p) => p.id === id) || null;
 }
