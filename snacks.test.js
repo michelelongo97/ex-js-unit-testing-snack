@@ -31,7 +31,10 @@ test("La funzione isPalindrome verifica se una stringa è un palindromo.", () =>
   expect(isPalindrome("alta")).toBeFalsy();
 });
 //6
-//  test('La funzione createSlug lancia un errore se il titolo è vuoto o non valido.')
+test("La funzione createSlug lancia un errore se il titolo è vuoto o non valido.", () => {
+  expect(() => createSlug("")).toThrow("Stringa non valida");
+});
+
 //7
 //  test('La funzione findPostById restituisce il post corretto dato l’array di post e l’id"')
 ///////////Creare uno o più test aggiuntivi che controllino che la struttura dati passati sia conforme (ogni post ha le proprietà id, title e slug, viene passato un id numerico).
