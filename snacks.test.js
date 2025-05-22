@@ -1,12 +1,10 @@
-const {} = require("./snacks.js");
+const { getInitials } = require("./snacks.js");
 
-function getInitials(nomecognome) {
-  const [nome, cognome] = nomecognome.split(" ");
-  return `${nome.charAt(0)}.${cognome.charAt(0)}.`;
-}
 //1
 test("La funzione getInitials restituisce le iniziali di un nome completo", () => {
   expect(getInitials("Michele Longo")).toBe("M.L.");
+  expect(getInitials("michele longo")).toBe("M.L.");
+  expect(getInitials("michele  longo")).toBe("M.L.");
 });
 
 //2
